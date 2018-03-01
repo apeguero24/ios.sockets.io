@@ -60,6 +60,46 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B62C0C5A204867960045786C /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B6F8385F2045C1B50062CA02 /* ViewController.swift */,
+				B6CE3D1D2046064800CD5917 /* HomeViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		B62C0C5B204867AD0045786C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B6F838612045C1B50062CA02 /* Main.storyboard */,
+				B6F838692045C1B50062CA02 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		B62C0C5C204867BD0045786C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B6CE3D1F2047081700CD5917 /* TextMessageTableViewCell.swift */,
+				B6CE3D202047081700CD5917 /* TextMessageTableViewCell.xib */,
+				B6CE3D23204723F500CD5917 /* TextImageTableViewCell.swift */,
+				B6CE3D24204723F500CD5917 /* TextImageTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		B62C0C5D204867CA0045786C /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				B6F8385D2045C1B50062CA02 /* AppDelegate.swift */,
+				B6F838672045C1B50062CA02 /* Assets.xcassets */,
+				B6F8386C2045C1B50062CA02 /* Info.plist */,
+				B6F838642045C1B50062CA02 /* sockets_io.xcdatamodeld */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 		B6F838512045C1B50062CA02 = {
 			isa = PBXGroup;
 			children = (
@@ -81,18 +121,10 @@
 		B6F8385C2045C1B50062CA02 /* sockets.io */ = {
 			isa = PBXGroup;
 			children = (
-				B6F8385D2045C1B50062CA02 /* AppDelegate.swift */,
-				B6F8385F2045C1B50062CA02 /* ViewController.swift */,
-				B6F838612045C1B50062CA02 /* Main.storyboard */,
-				B6CE3D1F2047081700CD5917 /* TextMessageTableViewCell.swift */,
-				B6CE3D202047081700CD5917 /* TextMessageTableViewCell.xib */,
-				B6F838672045C1B50062CA02 /* Assets.xcassets */,
-				B6F838692045C1B50062CA02 /* LaunchScreen.storyboard */,
-				B6F8386C2045C1B50062CA02 /* Info.plist */,
-				B6F838642045C1B50062CA02 /* sockets_io.xcdatamodeld */,
-				B6CE3D1D2046064800CD5917 /* HomeViewController.swift */,
-				B6CE3D23204723F500CD5917 /* TextImageTableViewCell.swift */,
-				B6CE3D24204723F500CD5917 /* TextImageTableViewCell.xib */,
+				B62C0C5D204867CA0045786C /* Other */,
+				B62C0C5C204867BD0045786C /* Cells */,
+				B62C0C5B204867AD0045786C /* Storyboards */,
+				B62C0C5A204867960045786C /* View Controllers */,
 			);
 			path = sockets.io;
 			sourceTree = "<group>";
@@ -384,7 +416,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3Q76DGNCRR;
-				INFOPLIST_FILE = sockets.io/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/sockets.io/Other/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.muhandjumah.sockets-io";
@@ -401,7 +433,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3Q76DGNCRR;
-				INFOPLIST_FILE = sockets.io/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/sockets.io/Other/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.muhandjumah.sockets-io";
