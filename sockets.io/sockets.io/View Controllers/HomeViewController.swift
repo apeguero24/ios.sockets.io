@@ -16,6 +16,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate, UINavigationCon
     struct TableViewCellIDS {
         static let TextMessage = "TextMessageID"
         static let ImageMessage = "ImageMessageID"
+        static let RoomName = "RoomNameID"
     }
     
     ////////////////////////////////
