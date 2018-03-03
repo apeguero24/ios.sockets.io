@@ -87,6 +87,107 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
+        <!--Rooms View Controller-->
+        <scene sceneID="xpU-2U-tGC">
+            <objects>
+                <viewController storyboardIdentifier="PrivateRooms" id="ZQh-xC-aih" customClass="RoomsViewController" customModule="sockets_io" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7vB-FZ-hFE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jN4-YB-1UX">
+                                <rect key="frame" x="16" y="47" width="343" height="349"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1UN-HH-7BF">
+                                <rect key="frame" x="16" y="404" width="343" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Join"/>
+                                <connections>
+                                    <action selector="joinRoomAction:" destination="ZQh-xC-aih" eventType="touchUpInside" id="ijl-so-iQN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evo-zO-pvi">
+                                <rect key="frame" x="16" y="442" width="343" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Join Public"/>
+                                <connections>
+                                    <action selector="joinPublicRoomAction:" destination="ZQh-xC-aih" eventType="touchUpInside" id="YdT-6E-ozd"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GW0-2I-idm">
+                                <rect key="frame" x="120" y="525" width="239" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a new room" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hej-rR-LTd">
+                                <rect key="frame" x="16" y="489" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85v-MH-OCY">
+                                <rect key="frame" x="16" y="529" width="96" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="L07-sB-Ira"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Z0-Mm-rIv">
+                                <rect key="frame" x="16" y="584" width="343" height="63"/>
+                                <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="rX5-U7-lTy"/>
+                                </constraints>
+                                <state key="normal" title="Create and join"/>
+                                <connections>
+                                    <action selector="newSceneAction:" destination="ZQh-xC-aih" eventType="touchUpInside" id="vV1-o4-Hdt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jN4-YB-1UX" firstAttribute="top" secondItem="wjg-U7-G2f" secondAttribute="top" constant="27" id="3Tw-Vo-8cT"/>
+                            <constraint firstItem="GW0-2I-idm" firstAttribute="top" secondItem="hej-rR-LTd" secondAttribute="bottom" constant="15" id="5Ei-l2-kd8"/>
+                            <constraint firstItem="wjg-U7-G2f" firstAttribute="trailing" secondItem="6Z0-Mm-rIv" secondAttribute="trailing" constant="16" id="9E7-3y-f9i"/>
+                            <constraint firstItem="wjg-U7-G2f" firstAttribute="bottom" secondItem="6Z0-Mm-rIv" secondAttribute="bottom" constant="20" id="A6u-nK-HVr"/>
+                            <constraint firstItem="GW0-2I-idm" firstAttribute="trailing" secondItem="hej-rR-LTd" secondAttribute="trailing" id="DKY-EX-Wt0"/>
+                            <constraint firstItem="85v-MH-OCY" firstAttribute="leading" secondItem="hej-rR-LTd" secondAttribute="leading" id="Dar-7r-IZW"/>
+                            <constraint firstItem="6Z0-Mm-rIv" firstAttribute="top" secondItem="GW0-2I-idm" secondAttribute="bottom" constant="29" id="Dic-jQ-ksG"/>
+                            <constraint firstItem="wjg-U7-G2f" firstAttribute="trailing" secondItem="jN4-YB-1UX" secondAttribute="trailing" constant="16" id="Inu-2h-7Bw"/>
+                            <constraint firstItem="evo-zO-pvi" firstAttribute="top" secondItem="1UN-HH-7BF" secondAttribute="bottom" constant="8" id="Kg1-gf-rBa"/>
+                            <constraint firstItem="85v-MH-OCY" firstAttribute="centerY" secondItem="GW0-2I-idm" secondAttribute="centerY" id="NpB-aw-Czf"/>
+                            <constraint firstItem="85v-MH-OCY" firstAttribute="leading" secondItem="evo-zO-pvi" secondAttribute="leading" id="SH8-FR-DqU"/>
+                            <constraint firstItem="GW0-2I-idm" firstAttribute="trailing" secondItem="evo-zO-pvi" secondAttribute="trailing" id="TKG-C7-taf"/>
+                            <constraint firstItem="1UN-HH-7BF" firstAttribute="top" secondItem="jN4-YB-1UX" secondAttribute="bottom" constant="8" id="Umc-h8-FNr"/>
+                            <constraint firstItem="jN4-YB-1UX" firstAttribute="leading" secondItem="wjg-U7-G2f" secondAttribute="leading" constant="16" id="UuT-b9-oE0"/>
+                            <constraint firstItem="wjg-U7-G2f" firstAttribute="trailing" secondItem="evo-zO-pvi" secondAttribute="trailing" constant="16" id="bGD-Li-EUP"/>
+                            <constraint firstItem="1UN-HH-7BF" firstAttribute="top" secondItem="jN4-YB-1UX" secondAttribute="bottom" constant="8" id="cdN-Gh-ciq"/>
+                            <constraint firstItem="wjg-U7-G2f" firstAttribute="trailing" secondItem="1UN-HH-7BF" secondAttribute="trailing" constant="16" id="dmT-ma-1Uq"/>
+                            <constraint firstItem="GW0-2I-idm" firstAttribute="leading" secondItem="85v-MH-OCY" secondAttribute="trailing" constant="8" id="q4W-2Q-oLV"/>
+                            <constraint firstItem="evo-zO-pvi" firstAttribute="top" secondItem="1UN-HH-7BF" secondAttribute="bottom" constant="8" id="qeM-PX-SdJ"/>
+                            <constraint firstItem="6Z0-Mm-rIv" firstAttribute="leading" secondItem="wjg-U7-G2f" secondAttribute="leading" constant="16" id="r02-Fd-E5i"/>
+                            <constraint firstItem="1UN-HH-7BF" firstAttribute="leading" secondItem="wjg-U7-G2f" secondAttribute="leading" constant="16" id="ryg-pb-0Go"/>
+                            <constraint firstItem="hej-rR-LTd" firstAttribute="top" secondItem="evo-zO-pvi" secondAttribute="bottom" constant="17" id="s6I-HX-Iub"/>
+                            <constraint firstItem="evo-zO-pvi" firstAttribute="leading" secondItem="wjg-U7-G2f" secondAttribute="leading" constant="16" id="vn4-iH-6Qo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wjg-U7-G2f"/>
+                    </view>
+                    <connections>
+                        <outlet property="joinBtn" destination="1UN-HH-7BF" id="B0b-xJ-6cs"/>
+                        <outlet property="joinPublicBtn" destination="evo-zO-pvi" id="nh5-LC-Lil"/>
+                        <outlet property="newRoomBtn" destination="6Z0-Mm-rIv" id="UW8-l2-RLU"/>
+                        <outlet property="newRoomTextfield" destination="GW0-2I-idm" id="mUY-UV-znl"/>
+                        <outlet property="roomsTableView" destination="jN4-YB-1UX" id="ODe-FR-AQs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LpI-ZJ-W6I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="885.60000000000002" y="133.5832083958021"/>
+        </scene>
         <!--Home View Controller-->
         <scene sceneID="OUl-BP-rFC">
             <objects>
@@ -171,7 +272,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lac-CQ-AWc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1000.8" y="133.5832083958021"/>
+            <point key="canvasLocation" x="1615" y="134"/>
         </scene>
     </scenes>
 </document>

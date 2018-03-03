@@ -10,57 +10,13 @@ import UIKit
 import SocketIO
 
 class HomeViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    ////////////////////////////////
-    //Structures
-    ////////////////////////////////
-    struct TableViewCellIDS {
-        static let TextMessage = "TextMessageID"
-        static let ImageMessage = "ImageMessageID"
-    }
-    
-    ////////////////////////////////
-    //Models
-    ////////////////////////////////
-    class TextMessage {
-        var senderName: String
-        var isMe: Bool
-        
-        init(senderName: String, isMe: Bool){
-            self.senderName = senderName
-            self.isMe = isMe
-        }
-    }
-    
-    class StringTextMessage : TextMessage{
-        var message: String
-        
-        init(message: String, senderName: String, isMe: Bool){
-            self.message = message
-            
-            super.init(senderName: senderName, isMe: isMe)
-        }
-    }
-    
-    class ImageTextMessage : TextMessage{
-        var image: UIImage
-        
-        init(image: UIImage, senderName: String, isMe: Bool){
-            self.image = image
-            
-            super.init(senderName: senderName, isMe: isMe)
-        }
-    }
     
     ////////////////////////////////
     //Global variables
     ////////////////////////////////
-    var manager: SocketManager!
-    var socket: SocketIOClient!
-    var currentUserName: String!
     var imagePicker = UIImagePickerController()
     var chosenImage = UIImage()
     var messages = [TextMessage]()
-    var previousColor = UIColor.green
     
     ////////////////////////////////
     //Outlets

@@ -23,20 +23,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
     //Action
     ////////////////////////////////
     @IBAction func connectBtn(_ sender: Any) {
-        guard let h = storyboard?.instantiateViewController(withIdentifier: "Home") as? HomeViewController else {return}
+//        guard let h = storyboard?.instantiateViewController(withIdentifier: "Home") as? HomeViewController else {return}
+        guard let rooms = storyboard?.instantiateViewController(withIdentifier: "PrivateRooms") as? RoomsViewController else {return}
         
-        h.manager = SocketManager(socketURL: URL(string: "http://\(ipAddressTextField.text ?? "192.168.7.24"):3000")!, config: [.log(false), .compress])
+        manager = SocketManager(socketURL: URL(string: "http://\(ipAddressTextField.text ?? "192.168.7.24"):3000")!, config: [.log(false), .compress])
         
-        h.socket = h.manager.defaultSocket
+        socket = manager.defaultSocket
         
-        h.socket.connect()
+        socket.connect()
         
-        h.socket.on(clientEvent: .connect) {data, ack in
-            h.currentUserName = self.userNameTextField.text!
-            guard let un = self.userNameTextField.text else {return}
-            h.socket.emit("new_member", "\(un)")
+        socket.on(clientEvent: .connect) {data, ack in
+            currentUserName = self.userNameTextField.text!
+//            guard let un = self.userNameTextField.text else {return}
+//            socket.emit("new_member", "\(un)")
             
-            self.present(h, animated: true, completion: nil)
+            self.present(rooms, animated: true, completion: nil)
         }
     }
     
