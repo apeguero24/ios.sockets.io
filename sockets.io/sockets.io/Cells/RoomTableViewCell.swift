@@ -9,7 +9,16 @@
 import UIKit
 
 class RoomTableViewCell: UITableViewCell {
-
+    ////////////////////////////
+    //Global variables
+    ////////////////////////////
+    var roomID: String = ""
+    var members: [String] = []
+    
+    
+    ////////////////////////////
+    //Outlets
+    ////////////////////////////
     @IBOutlet weak var RoomName: UILabel!
     
     override func awakeFromNib() {
