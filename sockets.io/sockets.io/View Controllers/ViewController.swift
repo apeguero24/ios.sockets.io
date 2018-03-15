@@ -36,7 +36,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             currentUserName = self.userNameTextField.text!
 //            guard let un = self.userNameTextField.text else {return}
 //            socket.emit("new_member", "\(un)")
-            
+
             self.present(rooms, animated: true, completion: nil)
         }
     }
